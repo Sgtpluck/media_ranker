@@ -6,7 +6,7 @@
   <%= @book.description %><br><br>
   Rank: <%= @book.rank %>
 
-<%= button_to '+1', ranked_path(@book.id) %><br>
+<%= button_to '+1', book_ranked_path(@book.id) %><br>
 
 <%= button_to 'Destroy this book!', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= button_to 'Edit this book!', edit_book_path(@book.id), method: :get %>

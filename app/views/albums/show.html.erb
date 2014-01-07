@@ -1,0 +1,15 @@
+<h1>
+  <%= @album.title %>
+</h1>
+<div class='album_show'>
+  written by <%= @album.artist %><br><br>
+  <%= @album.description %><br><br>
+  Rank: <%= @album.rank %>
+
+<%= button_to '+1', album_ranked_path(@album.id) %><br>
+
+<%= button_to 'Destroy this album!', @album, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Edit this album!', edit_album_path(@album.id), method: :get %>
+<%= button_to 'View all albums', albums_path, method: :get %>
+<%= button_to 'View all media', :root, method: :get %>
+

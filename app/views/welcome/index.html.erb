@@ -4,9 +4,28 @@
 </h1>
   <br>
 <div class='col1'>
+  <h2> Books </h2>
 <% @books.each do |book| %>
-  <%= book.title %>
-  <%= book.rank %>
+  <%= link_to book.title, book_path(book.id) %><br>
+  Ranking: <%= book.rank %><br>
   <% end %>
-  <%= button_to 'See All Books', books_path, method: :get %>
+<%= button_to 'See All Books', books_path, method: :get %>
+</div>
+
+<div class='col2'>
+  <h2> Movies </h2>
+  <% @movies.each do |movie| %>
+  <%= link_to movie.title, movie_path(movie.id) %><br>
+  Ranking: <%= movie.rank %><br>
+  <% end %>
+<%= button_to 'See All Movies', movies_path, method: :get %>
+</div>
+
+<div class='col3'>
+  <h2> Albums </h2>
+  <% @albums.each do |album| %>
+  <%= link_to album.title, album_path(album.id) %><br>
+  Ranking: <%= album.rank %><br>
+  <% end %>
+<%= button_to 'See All Albums', albums_path, method: :get %>
 </div>

@@ -1,0 +1,10 @@
+<h1>
+  Albums
+</h1>
+<% @albums.each do |album| %>
+  <%= link_to album.title, album_path(album.id) %><br>
+  <%= album.artist %><br>
+  <%= album.rank %><br>
+<% end %>
+
+  <%= button_to 'Create a new album to rank!', new_album_path, method: :get %>

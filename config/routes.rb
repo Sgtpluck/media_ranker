@@ -1,10 +1,14 @@
 MediaRank::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :books
   root 'welcome#index'
+  resources :books
+  resources :movies
+  resources :albums
 
-  post 'books/:id' => 'books#rank', as: :ranked
+  post 'books/:id' => 'books#rank', as: :book_ranked
+  post 'movies/:id' => 'movies#rank', as: :movie_ranked
+  post 'albums/:id' => 'albums#rank', as: :album_ranked
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
