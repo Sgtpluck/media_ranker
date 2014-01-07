@@ -1,0 +1,12 @@
+<h1>
+  <%= @book.title %>
+</h1>
+<div class='book_show'>
+  by <%= @book.author %><br><br>
+  <%= @book.description %><br><br>
+  Rank: <%= @book.rank %>
+
+<%= button_to '+1', ranked_path(@book.id) %><br>
+
+<%= button_to 'Destroy this book!', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
+

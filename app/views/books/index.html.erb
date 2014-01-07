@@ -1,0 +1,7 @@
+<% @books.each do |book| %>
+  <%= link_to book.title, book_path(book.id) %><br>
+  <%= book.author %><br>
+  <%= book.rank %><br>
+  <% end %>
+
+  <%= button_to 'Create a new book to rank!', new_book_path, method: :get %>
