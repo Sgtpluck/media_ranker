@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :find_book, only: [:show, :edit, :destroy, :rank]
+  before_action :find_book, only: [:show, :edit, :destroy, :rank, :update]
 
   def index
     @books = Book.all.sort_by {|book| book.rank }.reverse
@@ -30,6 +30,18 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
+
+  def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      redirect_to book_path, notice: 'Your book has been updated'
+    else
+      render :edit
+    end
+  end
+
 
 
   private

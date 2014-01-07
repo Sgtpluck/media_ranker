@@ -1,7 +1,12 @@
 
-Mediaaaaaaaa Rankkkkkeeeer
-
+<h1>
+  Mediaaaaaaaa Rankkkkkeeeer
+</h1>
+  <br>
+<div class='col1'>
 <% @books.each do |book| %>
   <%= book.title %>
   <%= book.rank %>
   <% end %>
+  <%= button_to 'See All Books', books_path, method: :get %>
+</div>
