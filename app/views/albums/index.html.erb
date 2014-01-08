@@ -2,9 +2,11 @@
   Albums
 </h1>
 <% @albums.each do |album| %>
+  <div class='item'>
   <%= link_to album.title, album_path(album.id) %><br>
   <%= album.artist %><br>
   <%= album.rank %><br>
+</div>
 <% end %>
 
-  <%= button_to 'Create a new album to rank!', new_album_path, method: :get %>
+  <%= link_to 'Create a new album to rank!', new_album_path, class: 'ui button' %>

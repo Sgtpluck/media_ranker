@@ -1,11 +1,13 @@
 <h1><%= @movie.title %></h1>
 Directed by <%= @movie.director %><br>
 <%= @movie.description %><br>
-<%= @movie.rank %>
+Upvotes: <%= @movie.rank %>
 
 <%= button_to '+1', movie_ranked_path(@movie.id) %><br>
-<%= button_to 'Destroy the movie!', @movie, method: :delete %>
-<%= button_to 'Edit this movie!', edit_movie_path(@movie.id), method: :get %>
-<%= button_to 'View all movies', movies_path, method: :get %>
-<%= button_to 'View all media', :root, method: :get %>
 
+<div class='ui buttons'>
+<%= button_to 'Destroy the movie!', @movie, method: :delete, class: 'ui negative button', data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit this movie!', edit_movie_path(@movie.id), method: :get, class: 'ui button' %>
+<%= link_to 'View all movies', movies_path, method: :get, class: 'ui button' %>
+<%= link_to 'View all media', :root, method: :get, class: 'ui button' %>
+<div>

@@ -2,14 +2,15 @@
   <%= @album.title %>
 </h1>
 <div class='album_show'>
-  written by <%= @album.artist %><br><br>
+  by <%= @album.artist %><br><br>
   <%= @album.description %><br><br>
-  Rank: <%= @album.rank %>
+  Upvotes: <%= @album.rank %>
 
 <%= button_to '+1', album_ranked_path(@album.id) %><br>
 
-<%= button_to 'Destroy this album!', @album, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= button_to 'Edit this album!', edit_album_path(@album.id), method: :get %>
-<%= button_to 'View all albums', albums_path, method: :get %>
-<%= button_to 'View all media', :root, method: :get %>
-
+<div class="ui buttons">
+  <%= button_to 'Destroy this album!', @album, method: :delete, class: "ui negative button", data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit this album!', edit_album_path(@album.id), class: "ui button" %>
+  <%= link_to 'View all albums', albums_path, class: "ui button" %>
+  <%= link_to 'View all media', :root, class: "ui button" %>
+</div>

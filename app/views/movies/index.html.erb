@@ -3,9 +3,11 @@
 </h1>
 
 <% @movies.each do |movie| %>
+<div class='item'>
   <%= link_to movie.title, movie_path(movie.id) %><br>
   <%= movie.rank %><br>
   <br>
+</div>
   <% end %>
 
-  <%= button_to 'Create A New Movie To Rank!', new_movie_path, method: :get %>
+  <%= link_to 'Create A New Movie To Rank!', new_movie_path, class: 'ui button' %>

@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
+      raise 'an error!'
       redirect_to albums_path, notice: 'Your album has been saved for judgment.'
     else
       render :new

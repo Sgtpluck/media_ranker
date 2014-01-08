@@ -2,9 +2,11 @@
   Books
 </h1>
 <% @books.each do |book| %>
+  <div class='item'>
   <%= link_to book.title, book_path(book.id) %><br>
   <%= book.author %><br>
   <%= book.rank %><br>
+  </div>
   <% end %>
 
-  <%= button_to 'Create a new book to rank!', new_book_path, method: :get %>
+  <%= link_to 'Create a new book to rank!', new_book_path, class: 'ui button' %>
