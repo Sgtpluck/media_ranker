@@ -4,8 +4,8 @@
 <% @books.each do |book| %>
   <div class='item'>
   <%= link_to book.title, book_path(book.id) %><br>
-  <%= book.author %><br>
-  <%= book.rank %><br>
+   Upvotes: <%= book.rank %><br>
+   <%= button_to '+1', book_ranked_path(book.id) %>
   </div>
   <% end %>
 

@@ -1,4 +1,3 @@
-
 <% @book.errors.full_messages.each do |error| %>
   <%= error %><br>
 <% end %>
@@ -10,8 +9,11 @@
   <%= f.label :author %>
   <%= f.text_field :author %><br>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br><br>
+ <div id="editor-button-bar"></div>
+  <%=f.label :description %><br>
+  <%=f.text_area :description, size: '80x10', id: 'editor-input' %>
+</div> 
+<div id="editor-preview"></div>
 
   <%= f.submit class: 'ui button' %>
 

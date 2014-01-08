@@ -4,14 +4,22 @@
 <% end %>
 
 <%= form_for @album do |f| %>
+<div class='field'>
   <%= f.label :title %>
   <%= f.text_field :title %> <br>
+</div>
 
+<div class='field'>
   <%= f.label :artist %>
   <%= f.text_field :artist %><br>
+</div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br><br>
+<div class='field'>
+  <div id="editor-button-bar"></div>
+  <%=f.label :description %><br>
+  <%=f.text_area :description, size: '80x10', id: 'editor-input' %>
+</div> 
+<div id="editor-preview"></div>
 
   <%= f.submit class: 'ui button' %>
 

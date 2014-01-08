@@ -1,6 +1,6 @@
 <h1><%= @movie.title %></h1>
 Directed by <%= @movie.director %><br>
-<%= @movie.description %><br>
+<%= markdown(@movie.description) %><br>
 Upvotes: <%= @movie.rank %>
 
 <%= button_to '+1', movie_ranked_path(@movie.id) %><br>

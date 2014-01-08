@@ -4,8 +4,8 @@
 <% @albums.each do |album| %>
   <div class='item'>
   <%= link_to album.title, album_path(album.id) %><br>
-  <%= album.artist %><br>
-  <%= album.rank %><br>
+  Upvotes: <%= album.rank %><br>
+  <%= button_to '+1', album_ranked_path(album.id) %>
 </div>
 <% end %>
 

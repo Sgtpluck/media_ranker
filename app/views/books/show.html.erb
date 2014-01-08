@@ -3,14 +3,14 @@
 </h1>
 <div class='book_show'>
   written by <%= @book.author %><br><br>
-  <%= @book.description %><br><br>
+  <%= markdown(@book.description) %><br><br>
   Upvotes: <%= @book.rank %>
 
 <%= button_to '+1', book_ranked_path(@book.id) %><br>
 
 <div class="ui buttons">
 <%= button_to 'Destroy this book!', @book, method: :delete, class: 'ui negative button', data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit this book!', edit_book_path(@book.id), class: "ui button" %> %>
-<%= link_to 'View all books', books_path, class: "ui button" %> %>
-<%= link_to 'View all media', :root, class: "ui button" %> %>
+<%= link_to 'Edit this book!', edit_book_path(@book.id), class: "ui button" %>
+<%= link_to 'View all books', books_path, class: "ui button" %>
+<%= link_to 'View all media', :root, class: "ui button" %>
 </div>

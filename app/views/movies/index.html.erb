@@ -5,7 +5,8 @@
 <% @movies.each do |movie| %>
 <div class='item'>
   <%= link_to movie.title, movie_path(movie.id) %><br>
-  <%= movie.rank %><br>
+   Upvotes: <%= movie.rank %><br>
+   <%= button_to '+1', movie_ranked_path(movie.id) %>
   <br>
 </div>
   <% end %>

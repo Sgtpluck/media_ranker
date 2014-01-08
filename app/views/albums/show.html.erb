@@ -3,7 +3,7 @@
 </h1>
 <div class='album_show'>
   by <%= @album.artist %><br><br>
-  <%= @album.description %><br><br>
+  <%= markdown(@album.description) %><br><br>
   Upvotes: <%= @album.rank %>
 
 <%= button_to '+1', album_ranked_path(@album.id) %><br>
